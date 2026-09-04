@@ -3,188 +3,742 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Assistance - Protection & Prévention</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Cyber Assistance - Protection, Prévention & Support</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           STYLE EXACT INSPIRÉ DE LA PHOTO T9.png
+           ========================================================= */
+        :root {
+            --bg-body: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-dark-banner: #070d18;
+            --primary-blue: #2563eb;
+            --accent-cyan: #0284c7;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+            --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* =========================================================
+           HEADER CLAIR & ÉPURÉ (T9.png)
+           ========================================================= */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.25rem 4rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 1.15rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-blue);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-incident {
+            background-color: var(--text-main);
+            color: #ffffff;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-incident:hover {
+            background-color: #1e293b;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           HERO SECTION MODERNE ET CLAIRE (T9.png)
+           ========================================================= */
+        .hero-section {
+            padding: 5rem 4rem;
+            background-color: #ffffff;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .hero-content {
+            max-width: 620px;
+        }
+
+        .badge-pill {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: #2563eb;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 2.85rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #0f172a;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2.25rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--text-main);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e293b;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-light);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: border-color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-main);
+        }
+
+        /* Cadre visuel Cadenas Néon */
+        .hero-illustration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-right: 2rem;
+        }
+
+        .lock-container {
+            width: 220px;
+            height: 260px;
+            background: #0284c7;
+            border-radius: 28px;
+            position: relative;
+            box-shadow: 0 0 70px rgba(2, 132, 199, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lock-shackle {
+            width: 100px;
+            height: 110px;
+            border: 20px solid #0284c7;
+            border-bottom: none;
+            border-radius: 60px 60px 0 0;
+            position: absolute;
+            top: -70px;
+        }
+
+        /* =========================================================
+           NOS SERVICES
+           ========================================================= */
+        .services-section {
+            padding: 4rem 4rem 5rem;
+            background-color: var(--bg-secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .services-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.06);
+        }
+
+        .service-icon {
+            width: 44px;
+            height: 44px;
+            background-color: #e0f2fe;
+            color: var(--accent-cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .service-link {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* =========================================================
+           BANDEAU STATISTIQUES SOMBRE (T9.png)
+           ========================================================= */
+        .stats-section {
+            background-color: var(--bg-dark-banner);
+            color: #ffffff;
+            padding: 3.5rem 4rem;
+        }
+
+        .stats-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-item p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* =========================================================
+           CONSEILS RÉCENTS (T9.png)
+           ========================================================= */
+        .blogs-section {
+            padding: 4rem 4rem 6rem;
+            background-color: var(--bg-secondary);
+        }
+
+        .blogs-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .blog-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-header-dark {
+            height: 150px;
+            background-color: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-header-dark svg {
+            width: 36px;
+            height: 36px;
+            color: #38bdf8;
+        }
+
+        .blog-body {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .blog-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .blog-date {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* =========================================================
+           WIDGET CHATBOT EN BAS À DROITE (T9.png)
+           ========================================================= */
+        .chatbot-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .chat-bubble {
+            background-color: #ffffff;
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            font-size: 0.85rem;
+            color: #1e293b;
+            max-width: 260px;
+            border: 1px solid var(--border-light);
+        }
+
+        .chat-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: flex-end;
+        }
+
+        .chat-btn {
+            background-color: #ffffff;
+            border: 1px solid #6366f1;
+            color: #4f46e5;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .chat-btn:hover {
+            background-color: #4f46e5;
+            color: #ffffff;
+        }
+
+        .chat-trigger {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .chat-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background-color: #ef4444;
+            color: #ffffff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .services-grid, .blogs-grid, .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-illustration {
+                padding-right: 0;
+            }
+            header, .hero-section, .services-section, .stats-section, .blogs-section {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>Cyber Assistance</span>
-        </div>
-        <nav class="nav-links">
-            <a href="#" class="active">Accueil</a>
-            <a href="#">Services</a>
-            <a href="#">Conseils</a>
-            <a href="#">Ressources</a>
-            <a href="#">À propos</a>
-            <a href="#">Contact</a>
-        </nav>
-        <div class="header-actions">
-            <button class="btn-incident"><i class="fa-solid fa-triangle-exclamation"></i> Signaler un incident</button>
-            <i class="fa-regular fa-user user-icon"></i>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg class="logo-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8subscriptionZ"/>
+                </svg>
+                Cyber Assistance
+            </a>
+
+            <nav>
+                <a href="#" class="active">Accueil</a>
+                <a href="#">Services</a>
+                <a href="#">Conseils</a>
+                <a href="#">Ressources</a>
+                <a href="#">À propos</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn-incident">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L1 21h22L12 2zm1 14h-2v-2h2v2zm0-4h-2V10h2v4z"/>
+                    </svg>
+                    Signaler un incident
+                </button>
+                <div class="user-avatar">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <span class="badge">ASSISTANCE & PRÉVENTION</span>
-            <h1>Nous protégeons vos données, nous sécurisons votre avenir.</h1>
-            <p>Une équipe d'experts à votre écoute 24h/24 et 7j/7 pour vous aider face aux cybermenaces et demandes de retrait.</p>
-            <div class="hero-buttons">
-                <button class="btn-primary" onclick="Tawk_API.toggle()"><i class="fa-regular fa-comments"></i> Démarrer une discussion</button>
-                <button class="btn-secondary">En savoir plus <i class="fa-solid fa-arrow-right"></i></button>
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="badge-pill">ASSISTANCE & PRÉVENTION</span>
+                <h1 class="hero-title">Nous protégeons vos données, nous sécurisons votre avenir.</h1>
+                <p class="hero-subtitle">Une équipe d'experts à votre écoute 24h/24 et 7j/7 pour vous aider face aux cybermenaces et demandes de retrait.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                        Démarrer une discussion
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        En savoir plus →
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <div class="shield-illustration">
-                <i class="fa-solid fa-lock glow-shield"></i>
+
+            <div class="hero-illustration">
+                <div class="lock-container">
+                    <div class="lock-shackle"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="services">
-        <h2>Nos services</h2>
-        <p class="subtitle">Des solutions adaptées à tous vos besoins en cybersécurité</p>
-        
+    <section class="services-section">
+        <div class="section-header">
+            <h2>Nos services</h2>
+            <p>Des solutions adaptées à tous vos besoins en cybersécurité</p>
+        </div>
+
         <div class="services-grid">
             <div class="service-card">
-                <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+                <div class="service-icon">
+                    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 1a9 9 0 0 0-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7a9 9 0 0 0-9-9z"/>
+                    </svg>
+                </div>
                 <h3>Assistance en ligne</h3>
                 <p>Discutez avec nos experts en temps réel pour résoudre vos problèmes de sécurité.</p>
-                <a href="#" class="card-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#" class="service-link">En savoir plus →</a>
             </div>
+
             <div class="service-card">
-                <div class="card-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                <div class="service-icon">
+                    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/>
+                    </svg>
+                </div>
                 <h3>Signalement & Retrait</h3>
                 <p>Signalez une tentative d'arnaque, une atteinte ou demandez la suppression d'un contenu.</p>
-                <a href="#" class="card-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#" class="service-link">En savoir plus →</a>
             </div>
+
             <div class="service-card">
-                <div class="card-icon"><i class="fa-solid fa-book-open"></i></div>
+                <div class="service-icon">
+                    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+                    </svg>
+                </div>
                 <h3>Conseils & Prévention</h3>
                 <p>Découvrez nos guides et bonnes pratiques pour vous protéger au quotidien.</p>
-                <a href="#" class="card-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#" class="service-link">En savoir plus →</a>
             </div>
+
             <div class="service-card">
-                <div class="card-icon"><i class="fa-solid fa-users-gear"></i></div>
+                <div class="service-icon">
+                    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                </div>
                 <h3>Ressources</h3>
                 <p>Accédez à nos outils, FAQ et ressources pour mieux comprendre la cybersécurité.</p>
-                <a href="#" class="card-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#" class="service-link">En savoir plus →</a>
             </div>
         </div>
     </section>
 
-    <section class="stats-banner">
-        <div class="stat-item">
-            <h3>15,000+</h3>
-            <p>Utilisateurs aidés</p>
-        </div>
-        <div class="stat-item">
-            <h3>8,500+</h3>
-            <p>Incidents résolus</p>
-        </div>
-        <div class="stat-item">
-            <h3>24/7</h3>
-            <p>Disponibilité</p>
-        </div>
-        <div class="stat-item">
-            <h3>100%</h3>
-            <p>Confidentialité garantie</p>
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>15,000+</h3>
+                <p>Utilisateurs aidés</p>
+            </div>
+            <div class="stat-item">
+                <h3>8,500+</h3>
+                <p>Incidents résolus</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Disponibilité</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Confidentialité garantie</p>
+            </div>
         </div>
     </section>
 
-    <section class="articles">
-        <h2>Conseils récents</h2>
-        <div class="articles-grid">
-            <article class="article-card">
-                <div class="article-img placeholder-1"><i class="fa-solid fa-lock"></i></div>
-                <div class="article-body">
-                    <h3>Comment créer un mot de passe sécurisé ?</h3>
-                    <span class="date">28 août 2026</span>
+    <section class="blogs-section">
+        <div class="section-header">
+            <h2>Conseils récents</h2>
+        </div>
+
+        <div class="blogs-grid">
+            <div class="blog-card">
+                <div class="blog-header-dark">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
                 </div>
-            </article>
-            <article class="article-card">
-                <div class="article-img placeholder-2"><i class="fa-solid fa-laptop-code"></i></div>
-                <div class="article-body">
-                    <h3>Phishing : comment identifier les arnaques ?</h3>
-                    <span class="date">25 août 2026</span>
+                <div class="blog-body">
+                    <h3 class="blog-title">Comment créer un mot de passe sécurisé ?</h3>
+                    <span class="blog-date">28 août 2026</span>
                 </div>
-            </article>
-            <article class="article-card">
-                <div class="article-img placeholder-3"><i class="fa-solid fa-mobile-screen-button"></i></div>
-                <div class="article-body">
-                    <h3>Protéger son smartphone au quotidien</h3>
-                    <span class="date">22 août 2026</span>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-header-dark">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                    </svg>
                 </div>
-            </article>
-            <article class="article-card">
-                <div class="article-img placeholder-1"><i class="fa-solid fa-shield-cat"></i></div>
-                <div class="article-body">
-                    <h3>Les bonnes pratiques pour sécuriser vos données</h3>
-                    <span class="date">20 août 2026</span>
+                <div class="blog-body">
+                    <h3 class="blog-title">Phishing : comment identifier les arnaques ?</h3>
+                    <span class="blog-date">25 août 2026</span>
                 </div>
-            </article>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-header-dark">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                    </svg>
+                </div>
+                <div class="blog-body">
+                    <h3 class="blog-title">Protéger son smartphone au quotidien</h3>
+                    <span class="blog-date">22 août 2026</span>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-header-dark">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm0 6c1.4 0 2.8 1.1 2.8 2.5V11c.6 0 1.2.6 1.2 1.2v3.5c0 .7-.6 1.3-1.2 1.3H9.2c-.6 0-1.2-.6-1.2-1.3v-3.5c0-.6.6-1.2 1.2-1.2V9.5C9.2 8.1 10.6 7 12 7z"/>
+                    </svg>
+                </div>
+                <div class="blog-body">
+                    <h3 class="blog-title">Les bonnes pratiques pour sécuriser vos données</h3>
+                    <span class="blog-date">20 août 2026</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col brand">
-                <div class="logo">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span>Cyber Assistance</span>
-                </div>
-                <p>Ensemble, construisons un cyberespace plus sûr.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Liens rapides</h4>
-                <a href="#">Accueil</a>
-                <a href="#">Services</a>
-                <a href="#">Conseils</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h4>Ressources</h4>
-                <a href="#">Guides</a>
-                <a href="#">FAQ</a>
-                <a href="#">Outils</a>
-                <a href="#">Actualités</a>
-            </div>
-            <div class="footer-col">
-                <h4>Légal</h4>
-                <a href="#">Mentions légales</a>
-                <a href="#">Politique de confidentialité</a>
-                <a href="#">CGU</a>
-                <a href="#">Cookies</a>
-            </div>
-            <div class="footer-col">
-                <h4>Nous suivre</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
+    <div class="chatbot-widget">
+        <div class="chat-bubble">
+            Bonjour ! Comment pouvons-nous vous aider pour le retrait de votre vidéo ?
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Cyber Assistance. Tous droits réservés.</p>
+        <div class="chat-actions">
+            <button class="chat-btn">Demander une suppression</button>
+            <button class="chat-btn">Poser une question</button>
         </div>
-    </footer>
+        <div class="chat-trigger">
+            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+            </svg>
+            <span class="chat-badge">1</span>
+        </div>
+    </div>
 
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6a99c91bd862ed3449e54ee1/1k1kbj503';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    </body>
+    <script src="//code.tidio.co/blppjoqotnp3v9j7jh6daqt80maslbiv.js" async></script>
+
+</body>
 </html>
