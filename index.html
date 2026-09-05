@@ -1,215 +1,364 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Assistance - Protection & Prévention</title>
-    
-    <!-- Liens vers la police Inter, FontAwesome et VOTRE fichier CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="YouTube Assistance — Centre d'assistance, conseils et ressources pour les utilisateurs de YouTube.">
+    <meta name="theme-color" content="#0f0f0f">
+    <title>YouTube Assistance</title>
+    <!-- Feuille de style principale -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- NAV -->
-    <header>
-        <div class="header-container">
-            <a href="#" class="brand-logo">
-                <i class="fa-solid fa-shield-halved"></i>
-                <div class="brand-text">
-                    <span class="brand-name">Cyber Assistance</span>
-                    <span class="brand-tagline">Protection - Prévention - Support</span>
-                </div>
+    <!-- =========================================================
+         BARRE SUPÉRIEURE
+    ========================================================== -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="menu-button" id="menuButton" aria-label="Ouvrir le menu">
+                ☰
+            </button>
+            <a href="#accueil" class="brand">
+                <span class="brand-icon">▶</span>
+                <span class="brand-text">
+                    <strong>YouTube</strong>
+                    <small>Assistance</small>
+                </span>
             </a>
-            <nav>
-                <a href="#" class="active">Accueil</a>
-                <a href="#">Services</a>
-                <a href="#">Conseils</a>
-                <a href="#">Ressources</a>
-                <a href="#">À propos</a>
-                <a href="#">Contact</a>
-            </nav>
-            <div class="header-actions">
-                <a href="#" class="btn-incident">
-                    <i class="fa-solid fa-triangle-exclamation"></i> Signaler un incident
-                </a>
-                <div class="user-icon-btn"><i class="fa-regular fa-user"></i></div>
-            </div>
+        </div>
+
+        <!-- Recherche -->
+        <div class="search-container">
+            <form class="search-box">
+                <input type="search" placeholder="Rechercher dans YouTube Assistance..." aria-label="Rechercher">
+                <button type="submit" aria-label="Rechercher">🔍</button>
+            </form>
+            <button class="voice-button" aria-label="Recherche vocale">🎙️</button>
+        </div>
+
+        <!-- Actions utilisateur -->
+        <div class="topbar-actions">
+            <button class="create-button">＋ <span>Créer</span></button>
+            <button class="notification-button" aria-label="Notifications">
+                🔔 <span class="notification-badge">3</span>
+            </button>
+            <button class="profile-button" aria-label="Profil">YA</button>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-container">
-            <div>
-                <span class="pill-badge">ASSISTANCE & PRÉVENTION</span>
-                <h1 class="hero-title">Nous protégeons vos données, nous sécurisons votre avenir.</h1>
-                <p class="hero-desc">Une équipe d'experts à votre écoute 24h/24 et 7j/7 pour vous aider face aux cybermenaces et demandes de retrait.</p>
-                <div class="hero-btns">
-                    <a href="#" class="btn-primary"><i class="fa-regular fa-comment-dots"></i> Démarrer une discussion</a>
-                    <a href="#" class="btn-secondary">En savoir plus &rarr;</a>
+    <!-- =========================================================
+         STRUCTURE PRINCIPALE
+    ========================================================== -->
+    <div class="page-layout">
+
+        <!-- =====================================================
+             MENU LATÉRAL
+        ====================================================== -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <a href="#accueil" class="sidebar-link active">
+                    <span class="sidebar-icon">🏠</span>
+                    <span>Accueil</span>
+                </a>
+                <a href="#assistance" class="sidebar-link">
+                    <span class="sidebar-icon">💬</span>
+                    <span>Assistance</span>
+                </a>
+                <a href="#signalement" class="sidebar-link">
+                    <span class="sidebar-icon">⚠️</span>
+                    <span>Signalements &amp; Retrait</span>
+                </a>
+                <a href="#conseils" class="sidebar-link">
+                    <span class="sidebar-icon">💡</span>
+                    <span>Conseils</span>
+                </a>
+                <a href="#guides" class="sidebar-link">
+                    <span class="sidebar-icon">📚</span>
+                    <span>Guides</span>
+                </a>
+
+                <div class="sidebar-separator"></div>
+
+                <h3 class="sidebar-title">YouTube Assistance</h3>
+                <a href="#compte" class="sidebar-link">
+                    <span class="sidebar-icon">👤</span>
+                    <span>Mon assistance</span>
+                </a>
+                <a href="#historique" class="sidebar-link">
+                    <span class="sidebar-icon">🕒</span>
+                    <span>Historique</span>
+                </a>
+                <a href="#favoris" class="sidebar-link">
+                    <span class="sidebar-icon">❤️</span>
+                    <span>Mes favoris</span>
+                </a>
+
+                <div class="sidebar-separator"></div>
+
+                <h3 class="sidebar-title">Explorer</h3>
+                <a href="#securite" class="sidebar-link">
+                    <span class="sidebar-icon">🛡️</span>
+                    <span>Sécurité</span>
+                </a>
+                <a href="#confidentialite" class="sidebar-link">
+                    <span class="sidebar-icon">🔐</span>
+                    <span>Confidentialité</span>
+                </a>
+                <a href="#compte" class="sidebar-link">
+                    <span class="sidebar-icon">⚙️</span>
+                    <span>Compte</span>
+                </a>
+                <a href="#actualites" class="sidebar-link">
+                    <span class="sidebar-icon">📰</span>
+                    <span>Actualités</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>© 2026 YouTube Assistance</p>
+                <a href="#mentions">Mentions légales</a>
+                <a href="#confidentialite">Confidentialité</a>
+            </div>
+        </aside>
+
+        <!-- =====================================================
+             CONTENU PRINCIPAL
+        ====================================================== -->
+        <main class="main-content" id="accueil">
+
+            <!-- CATÉGORIES (Problème 1 résolu) -->
+            <div class="category-bar">
+                <a href="#accueil" class="category active">Tous</a>
+                <a href="#assistance" class="category">Assistance</a>
+                <a href="#securite" class="category">Sécurité</a>
+                <a href="#conseils" class="category">Conseils</a>
+                <a href="#guides" class="category">Guides</a>
+                <a href="#signalement" class="category">Signalements</a>
+                <a href="#compte" class="category">Compte</a>
+                <a href="#confidentialite" class="category">Confidentialité</a>
+                <a href="#actualites" class="category">Actualités</a>
+                <a href="#support" class="category">Support</a>
+            </div>
+
+            <!-- HERO -->
+            <section class="hero" id="assistance">
+                <div class="hero-content">
+                    <span class="hero-badge">CENTRE D'ASSISTANCE</span>
+                    <h1>Besoin d'aide<br>avec YouTube ?</h1>
+                    <p>Trouvez rapidement des réponses, des conseils et une assistance adaptée à votre situation.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="primary-button">💬 Démarrer une discussion</a>
+                        <a href="#guides" class="secondary-button">Explorer les guides →</a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop" alt="Cybersécurité 3D">
-            </div>
-        </div>
-    </section>
 
-    <!-- SERVICES -->
-    <section class="services-section">
-        <div class="section-header">
-            <h2>Nos services</h2>
-            <p>Des solutions adaptées à tous vos besoins en cybersécurité</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
-                <h3>Assistance en ligne</h3>
-                <p>Discutez avec nos experts en temps réel pour résoudre vos problèmes de sécurité.</p>
-                <a href="#" class="service-link">En savoir plus &rarr;</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-shield-check"></i></div>
-                <h3>Signalement & Retrait</h3>
-                <p>Signalez une tentative d'arnaque, une atteinte ou demandez la suppression d'un contenu.</p>
-                <a href="#" class="service-link">En savoir plus &rarr;</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-book-open"></i></div>
-                <h3>Conseils & Prévention</h3>
-                <p>Découvrez nos guides et bonnes pratiques pour vous protéger au quotidien.</p>
-                <a href="#" class="service-link">En savoir plus &rarr;</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-users"></i></div>
-                <h3>Ressources</h3>
-                <p>Accédez à nos outils, FAQ et ressources pour mieux comprendre la cybersécurité.</p>
-                <a href="#" class="service-link">En savoir plus &rarr;</a>
-            </div>
-        </div>
-    </section>
+                <div class="hero-visual">
+                    <div class="hero-glow"></div>
+                    <div class="hero-device">
+                        <div class="device-screen">
+                            <div class="device-play">▶</div>
+                            <div class="device-lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-card card-one">🔐 Sécurité</div>
+                    <div class="floating-card card-two">💬 Assistance</div>
+                    <div class="floating-card card-three">✓ Résolution</div>
+                </div>
+            </section>
 
-    <!-- STATS -->
-    <div class="stats-section">
-        <div class="stats-card-dark">
-            <div class="stat-box">
-                <i class="fa-solid fa-users"></i>
-                <div class="stat-number">15,000+</div>
-                <div class="stat-label">Utilisateurs aidés</div>
-            </div>
-            <div class="stat-box">
-                <i class="fa-solid fa-shield-halved"></i>
-                <div class="stat-number">8,500+</div>
-                <div class="stat-label">Incidents résolus</div>
-            </div>
-            <div class="stat-box">
-                <i class="fa-regular fa-clock"></i>
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Disponibilité</div>
-            </div>
-            <div class="stat-box">
-                <i class="fa-solid fa-lock"></i>
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Confidentialité garantie</div>
-            </div>
-        </div>
+            <!-- SECTION VIDÉOS / SERVICES -->
+            <section class="content-section" id="conseils">
+                <div class="section-header">
+                    <div>
+                        <span class="section-label">À LA UNE</span>
+                        <h2>Conseils et assistance</h2>
+                    </div>
+                    <a href="#guides" class="see-all">Tout afficher →</a>
+                </div>
+
+                <div class="video-grid">
+                    <!-- Carte 1 -->
+                    <article class="video-card">
+                        <a href="#guides" class="thumbnail thumbnail-one">
+                            <span class="thumbnail-badge">GUIDE</span>
+                            <strong>SÉCURITÉ<br>DU COMPTE</strong>
+                            <span class="duration">08:42</span>
+                        </a>
+                        <div class="video-info">
+                            <div class="channel-avatar">Y</div>
+                            <div>
+                                <h3>Comment sécuriser son compte YouTube ?</h3>
+                                <p>YouTube Assistance ✓</p>
+                                <span>15 k vues • il y a 2 jours</span>
+                            </div>
+                            <button class="more-button">⋮</button>
+                        </div>
+                    </article>
+
+                    <!-- Carte 2 -->
+                    <article class="video-card">
+                        <a href="#securite" class="thumbnail thumbnail-two">
+                            <span class="thumbnail-badge">SÉCURITÉ</span>
+                            <strong>ATTENTION<br>AUX ARNAQUES</strong>
+                            <span class="duration">10:15</span>
+                        </a>
+                        <div class="video-info">
+                            <div class="channel-avatar">Y</div>
+                            <div>
+                                <h3>Comment reconnaître une tentative d'arnaque ?</h3>
+                                <p>YouTube Assistance ✓</p>
+                                <span>8,5 k vues • il y a 4 jours</span>
+                            </div>
+                            <button class="more-button">⋮</button>
+                        </div>
+                    </article>
+
+                    <!-- Carte 3 -->
+                    <article class="video-card">
+                        <a href="#confidentialite" class="thumbnail thumbnail-three">
+                            <span class="thumbnail-badge">CONSEIL</span>
+                            <strong>PROTÉGER<br>SES DONNÉES</strong>
+                            <span class="duration">06:31</span>
+                        </a>
+                        <div class="video-info">
+                            <div class="channel-avatar">Y</div>
+                            <div>
+                                <h3>Protéger ses données personnelles</h3>
+                                <p>YouTube Assistance ✓</p>
+                                <span>5,2 k vues • il y a 1 semaine</span>
+                            </div>
+                            <button class="more-button">⋮</button>
+                        </div>
+                    </article>
+
+                    <!-- Carte 4 (Signalement & Retrait) -->
+                    <article class="video-card">
+                        <a href="#signalement" class="thumbnail thumbnail-four">
+                            <span class="thumbnail-badge">ALERTE</span>
+                            <strong>SIGNALEMENT &amp;<br>RETRAIT DE VIDÉO</strong>
+                            <span class="duration">09:27</span>
+                        </a>
+                        <div class="video-info">
+                            <div class="channel-avatar">Y</div>
+                            <div>
+                                <h3>Demande de suppression ou signalement de contenu</h3>
+                                <p>YouTube Assistance ✓</p>
+                                <span>12 k vues • il y a 1 semaine</span>
+                            </div>
+                            <button class="more-button">⋮</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ASSISTANCE RAPIDE -->
+            <section class="quick-help" id="support">
+                <div>
+                    <span class="section-label">ASSISTANCE RAPIDE</span>
+                    <h2>Vous ne trouvez pas la réponse ?</h2>
+                    <p>Notre équipe peut vous aider directement.</p>
+                </div>
+                <a href="#contact" class="primary-button">💬 Contacter l'assistance</a>
+            </section>
+
+            <!-- GUIDES -->
+            <section class="content-section" id="guides">
+                <div class="section-header">
+                    <div>
+                        <span class="section-label">RESSOURCES</span>
+                        <h2>Guides populaires</h2>
+                    </div>
+                </div>
+
+                <div class="guide-grid">
+                    <a href="#securite" class="guide-card">
+                        <span>🛡️</span>
+                        <div>
+                            <h3>Sécurité</h3>
+                            <p>Protégez votre compte et vos informations.</p>
+                        </div>
+                        <b>→</b>
+                    </a>
+
+                    <a href="#compte" class="guide-card">
+                        <span>👤</span>
+                        <div>
+                            <h3>Compte</h3>
+                            <p>Connexion, mot de passe et récupération.</p>
+                        </div>
+                        <b>→</b>
+                    </a>
+
+                    <a href="#confidentialite" class="guide-card">
+                        <span>🔐</span>
+                        <div>
+                            <h3>Confidentialité</h3>
+                            <p>Gérez vos paramètres de confidentialité.</p>
+                        </div>
+                        <b>→</b>
+                    </a>
+
+                    <a href="#signalement" class="guide-card">
+                        <span>⚠️</span>
+                        <div>
+                            <h3>Signalement &amp; Retrait</h3>
+                            <p>Signalez une vidéo ou demandez un retrait.</p>
+                        </div>
+                        <b>→</b>
+                    </a>
+                </div>
+            </section>
+
+            <!-- CONTACT / CHAT (Problème 3 résolu) -->
+            <section class="contact-section" id="contact">
+                <div>
+                    <span class="section-label">BESOIN D'AIDE ?</span>
+                    <h2>Démarrer une conversation</h2>
+                    <p>Notre espace de discussion vous permettra d'échanger avec l'assistance.</p>
+                </div>
+                <button class="contact-button" id="openChatBtn">
+                    💬 Ouvrir le chat
+                </button>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <div class="brand">
+                            <span class="brand-icon">▶</span>
+                            <span class="brand-text">
+                                <strong>YouTube</strong>
+                                <small>Assistance</small>
+                            </span>
+                        </div>
+                        <p>Centre d'assistance et de ressources.</p>
+                    </div>
+
+                    <div>
+                        <h3>Assistance</h3>
+                        <a href="#assistance">Assistance en ligne</a>
+                        <a href="#signalement">Signaler un problème</a>
+                        <a href="#guides">Guides</a>
+                    </div>
+
+                    <div>
+                        <h3>Ressources</h3>
+                        <a href="#conseils">Conseils</a>
+                        <a href="#securite">Sécurité</a>
+                    </div>
+                </div>
+            </footer>
+
+        </main>
     </div>
 
-    <!-- CONSEILS -->
-    <section class="blogs-section">
-        <div class="section-header">
-            <h2>Conseils récents</h2>
-        </div>
-        <div class="blogs-grid">
-            <div class="blog-card">
-                <div class="blog-thumb">
-                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=600&auto=format&fit=crop" alt="Mot de passe">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-title">Comment créer un mot de passe sécurisé ?</h3>
-                    <span class="blog-date">28 août 2026</span>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-thumb">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop" alt="Phishing">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-title">Phishing : comment identifier les arnaques ?</h3>
-                    <span class="blog-date">25 août 2026</span>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-thumb">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop" alt="Smartphone">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-title">Protéger son smartphone au quotidien</h3>
-                    <span class="blog-date">22 août 2026</span>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-thumb">
-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=600&auto=format&fit=crop" alt="Données">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-title">Les bonnes pratiques pour sécuriser vos données</h3>
-                    <span class="blog-date">20 août 2026</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-brand">
-                <a href="#" class="logo">
-                    <i class="fa-solid fa-shield-halved" style="color: #2563eb;"></i> Cyber Assistance
-                </a>
-                <p>Ensemble, construisons un cyberespace plus sûr.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Liens rapides</h4>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Conseils</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Ressources</h4>
-                <ul>
-                    <li><a href="#">Guides</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Outils</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Légal</h4>
-                <ul>
-                    <li><a href="#">Mentions légales</a></li>
-                    <li><a href="#">Confidentialité</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Nous suivre</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            © 2026 Cyber Assistance. Tous droits réservés.
-        </div>
-    </footer>
-
-    <!-- SCRIPT CHATBOT TIDIO -->
-    <script src="//code.tidio.co/blppjoqotnp3v9j7jh6daqt80maslbiv.js" async></script>
 </body>
 </html>
