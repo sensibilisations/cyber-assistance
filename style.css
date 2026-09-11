@@ -515,10 +515,44 @@ footer {
     padding-top: 2rem;
 }
 
-/* Responsive pour mobiles */
+/* =========================================================
+   8. MEDIA QUERIES (RESPONSIVE MOBILE MODERNE)
+   ========================================================= */
 @media (max-width: 768px) {
+    header {
+        padding: 0.75rem 1rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+        width: 100%;
+        padding-top: 0.25rem;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 0.25rem;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
     }
 
     .footer-container {
